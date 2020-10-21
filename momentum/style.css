@@ -13,12 +13,18 @@ body {
   text-align: center;
   height: 100vh;
   background-size: cover;
-  color: #000000;
+  color: #ffffff;
+  background-image: url(./assets/images/day/1.jpg);
 }
 
 .time {
   font-size: 8rem;
 }
+
+.week {
+  font-size: 3rem;
+}
+
 
 h1 {
   margin-bottom: 3rem;
@@ -27,6 +33,18 @@ h1 {
 h2 {
   margin-bottom: 0.5rem;
   opacity: 0.8;
+}
+
+.scroll_wrapper {
+  width: 100vh;
+}
+
+.scroll_content {
+  display: flex;
+}
+
+.scroll_content button {
+  cursor: pointer;
 }
 
 @media (max-width: 700px) {

@@ -1,113 +1,110 @@
-// DOM Elements
-const time = document.querySelector('.time'),
-  greeting = document.querySelector('.greeting'),
-  name = document.querySelector('.name'),
-  focus = document.querySelector('.focus');
+let time = document.querySelector('.time'),
+    greeting = document.querySelector('.greeting'),
+    name = document.querySelector('.name'),
+    focus = document.querySelector('.focus'),
+    week = document.querySelector('.week'),
+    week_array = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'],
+    month_array = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
+    body = document.querySelector("body"),
+    photoNumber = Math.floor(1 + Math.random() * 20),
+    timeOfDay = "";
+    console.log(photoNumber);
 
-// Options
-const showAmPm = true;
-
-// Show Time
-function showTime() {
-  let today = new Date(),
-    hour = today.getHours(),
-    min = today.getMinutes(),
-    sec = today.getSeconds();
-
-  // Set AM or PM
-  const amPm = hour >= 12 ? 'PM' : 'AM';
-
-  // 12hr Format
-  hour = hour % 12 || 12;
-
-  // Output Time
-  time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(
-    sec
-  )} ${showAmPm ? amPm : ''}`;
-
-  setTimeout(showTime, 1000);
+function setTime() {
+  let date = new Date(),
+      hour = date.getHours(),
+       min = date.getMinutes(),
+       sec = date.getSeconds();
+  time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
+  if (min === 0) {
+    show_greting()
+  };
+  setTimeout(setTime, 1000); //встроеная функция, она вызывает другую функцию через определённое кол-во милисекунд 
+}
+//Добавляем ноль к числу меньше 10
+function addZero(x) {
+ return x < 10 ? x = '0'+ x : x
 }
 
-// Add Zeros
-function addZero(n) {
-  return (parseInt(n, 10) < 10 ? '0' : '') + n;
+//Выводим на экран день недели число и месяц
+function setDay() {
+    let date = new Date(),
+    dayOfWeek = date.getDay(),
+    day = date.getDate(),
+    month = date.getMonth();
+    week.innerHTML = `${week_array[dayOfWeek]}<span>, </span>${day}<span> </span>${month_array[month]}`;
+    setTimeout(setDay, 60000);
 }
 
-// Set Background and Greeting
-function setBgGreet() {
-  let today = new Date(),
-    hour = today.getHours();
+//Выводим приветствие и Фоновое изображение-------------------------------------
+//------------------------------------------------------------------------------
+function show_greting() {
+  let date = new Date(),
+      hour = date.getHours();
 
-  if (hour < 12) {
-    // Morning
-    document.body.style.backgroundImage =
-      "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
-    greeting.textContent = 'Good Morning, ';
-  } else if (hour < 18) {
-    // Afternoon
-    document.body.style.backgroundImage =
-      "url('https://i.ibb.co/3mThcXc/afternoon.jpg')";
-    greeting.textContent = 'Good Afternoon, ';
-  } else {
-    // Evening
-    document.body.style.backgroundImage =
-      "url('https://i.ibb.co/924T2Wv/night.jpg')";
-    greeting.textContent = 'Good Evening, ';
-    document.body.style.color = 'white';
+  if (hour<6) {
+    timeOfDay = "night";
+    greeting.innerHTML = 'Доброй ночи,';
+    body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
+  } else 
+  if (hour<12) {
+    timeOfDay = "morning";
+    greeting.innerHTML = 'Доброе утро,';
+    body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
+  } else
+  if (hour<18) {
+    timeOfDay = "day";
+    greeting.innerHTML = 'Добрый день,';
+    body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
+  } else
+  if (hour<24) {
+    timeOfDay = "evening";
+    greeting.innerHTML = 'Добрый вечер,';
+    body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
   }
 }
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
-// Get Name
-function getName() {
-  if (localStorage.getItem('name') === null) {
-    name.textContent = '[Enter Name]';
-  } else {
-    name.textContent = localStorage.getItem('name');
-  }
-}
 
-// Set Name
-function setName(e) {
-  if (e.type === 'keypress') {
-    // Make sure enter is pressed
-    if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('name', e.target.innerText);
-      name.blur();
-    }
-  } else {
-    localStorage.setItem('name', e.target.innerText);
-  }
-}
+name.addEventListener('focus', function() {
+   name.innerHTML = ''; 
+})
 
-// Get Focus
-function getFocus() {
-  if (localStorage.getItem('focus') === null) {
-    focus.textContent = '[Enter Focus]';
-  } else {
-    focus.textContent = localStorage.getItem('focus');
-  }
-}
+name.addEventListener('blur', function() {
+  name.innerHTML = 'Укажите Ваше имя'; 
+})
 
-// Set Focus
-function setFocus(e) {
-  if (e.type === 'keypress') {
-    // Make sure enter is pressed
-    if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('focus', e.target.innerText);
-      focus.blur();
-    }
-  } else {
-    localStorage.setItem('focus', e.target.innerText);
-  }
-}
+focus.addEventListener('focus', function() {
+  focus.innerHTML = ''; 
+})
 
-name.addEventListener('keypress', setName);
-name.addEventListener('blur', setName);
-focus.addEventListener('keypress', setFocus);
-focus.addEventListener('blur', setFocus);
+focus.addEventListener('blur', function() {
+  focus.innerHTML = 'Задайте цель'; 
+})
 
-// Run
-showTime();
-setBgGreet();
-getName();
-getFocus();
+//кнопки смены фонового изображения--------------------------------------------
+//-----------------------------------------------------------------------------
+back_button.addEventListener('click', function() {
+  photoNumber--;
+  if (photoNumber < 1) {
+    photoNumber=20
+  };
+  body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
+})
+
+ahead_button.addEventListener('click', function() {
+  photoNumber++;
+  if (photoNumber >20) {
+    photoNumber = 1
+  };
+  body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
+})
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+
+//вызываем функции времени
+show_greting();
+setDay();
+setTime();
+
