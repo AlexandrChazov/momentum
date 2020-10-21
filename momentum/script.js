@@ -174,6 +174,57 @@ focus.addEventListener('keypress', setFocus);
 //-------------------------------------------------------------------------------
 
 
+// если смена цитаты у вас не работает, вероятно, исчерпался лимит API. в консоли ошибка 403
+// скопируйте код себе и запустите со своего компьютера
+const blockquote = document.querySelector('blockquote');
+const figcaption = document.querySelector('figcaption');
+const btn = document.querySelector('.btn');
+
+// если в ссылке заменить lang=en на lang=ru, цитаты будут на русском языке
+// префикс https://cors-anywhere.herokuapp.com используем для доступа к данным с других сайтов если браузер возвращает ошибку Cross-Origin Request Blocked 
+async function getQuote() {  
+  const url = `https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=ru`;
+  const res = await fetch(url);
+  const data = await res.json(); 
+  blockquote.textContent = data.quoteText;
+  figcaption.textContent = data.quoteAuthor;
+}
+document.addEventListener('DOMContentLoaded', getQuote);
+btn.addEventListener('click', getQuote);
+
+//Погода--------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
+const weatherIcon = document.querySelector('.weather-icon');
+const temperature = document.querySelector('.temperature');
+const weatherDescription = document.querySelector('.weather-description');
+const city = document.querySelector('.city');
+
+async function getWeather() {  
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=ru&appid=08f2a575dda978b9c539199e54df03b0&units=metric`;
+  const res = await fetch(url);
+  const data = await res.json(); 
+
+  weatherIcon.className = 'weather-icon owf';
+  weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+  weatherIcon.classList.add(`owf-5x`); //большие иконки
+  temperature.textContent = `${data.main.temp}°C`;
+  weatherDescription.textContent = data.weather[0].description;
+
+}
+
+function setCity(event) {
+  if (event.code === 'Enter') {
+    getWeather();
+    city.blur();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', getWeather);
+city.addEventListener('keypress', setCity);
+
+getWeather()
+//--------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
 
 
 //вызываем функции времени
