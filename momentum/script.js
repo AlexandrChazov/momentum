@@ -7,26 +7,35 @@ let time = document.querySelector('.time'),
     month_array = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
     body = document.querySelector("body"),
     photoNumber = Math.floor(1 + Math.random() * 20),
-    timeOfDay = "";
-    console.log(photoNumber);
+    timeOfDay = ['morning','day','evening','night'],
+    folderName = "";
 
+
+
+//Выводим на экран время--------------------------------------------------------
+//------------------------------------------------------------------------------
 function setTime() {
   let date = new Date(),
       hour = date.getHours(),
        min = date.getMinutes(),
        sec = date.getSeconds();
   time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
-  if (min === 0) {
+  if (min === 0 && sec === 0) {
     show_greting()
   };
   setTimeout(setTime, 1000); //встроеная функция, она вызывает другую функцию через определённое кол-во милисекунд 
 }
-//Добавляем ноль к числу меньше 10
-function addZero(x) {
+
+function addZero(x) {           //Добавляем ноль к числу меньше 10
  return x < 10 ? x = '0'+ x : x
 }
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
-//Выводим на экран день недели число и месяц
+
+
+//Выводим на экран день недели число и месяц------------------------------------------
+//------------------------------------------------------------------------------
 function setDay() {
     let date = new Date(),
     dayOfWeek = date.getDay(),
@@ -35,75 +44,141 @@ function setDay() {
     week.innerHTML = `${week_array[dayOfWeek]}<span>, </span>${day}<span> </span>${month_array[month]}`;
     setTimeout(setDay, 60000);
 }
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+
 
 //Выводим приветствие и Фоновое изображение-------------------------------------
 //------------------------------------------------------------------------------
 function show_greting() {
   let date = new Date(),
       hour = date.getHours();
+      photoNumber = Math.floor(1 + Math.random() * 20);
 
   if (hour<6) {
-    timeOfDay = "night";
     greeting.innerHTML = 'Доброй ночи,';
-    body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
+    folderName = timeOfDay[3];
+    body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
   } else 
   if (hour<12) {
-    timeOfDay = "morning";
     greeting.innerHTML = 'Доброе утро,';
-    body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
+    folderName = timeOfDay[0];
+    body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
   } else
   if (hour<18) {
-    timeOfDay = "day";
     greeting.innerHTML = 'Добрый день,';
-    body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
+    folderName = timeOfDay[1];
+    body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
   } else
   if (hour<24) {
-    timeOfDay = "evening";
     greeting.innerHTML = 'Добрый вечер,';
-    body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
+    folderName = timeOfDay[2];
+    body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
   }
 }
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
 
+//Очистка имени и цели----------------------------------------------------------
+//------------------------------------------------------------------------------
 name.addEventListener('focus', function() {
-   name.innerHTML = ''; 
+   name.textContent = ''; 
 })
 
 name.addEventListener('blur', function() {
-  name.innerHTML = 'Укажите Ваше имя'; 
+  name.textContent = localStorage.getItem('name'); 
 })
 
 focus.addEventListener('focus', function() {
-  focus.innerHTML = ''; 
+  focus.textContent = ''; 
 })
 
 focus.addEventListener('blur', function() {
-  focus.innerHTML = 'Задайте цель'; 
+  focus.textContent = localStorage.getItem('focus'); 
 })
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+
+
 
 //кнопки смены фонового изображения--------------------------------------------
 //-----------------------------------------------------------------------------
 back_button.addEventListener('click', function() {
   photoNumber--;
   if (photoNumber < 1) {
-    photoNumber=20
+    photoNumber = 20;
+    var index = timeOfDay.indexOf(folderName)-1;
+    if (index < 0) {
+      folderName = 'night';
+    } else {
+       folderName = timeOfDay[index];
+    }
   };
-  body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
+  body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
 })
 
 ahead_button.addEventListener('click', function() {
   photoNumber++;
-  if (photoNumber >20) {
-    photoNumber = 1
+  if (photoNumber > 20) {
+      photoNumber = 1;
+      var index = timeOfDay.indexOf(folderName)+1;
+      if (index > 3) {
+        folderName = 'morning';
+      } else {
+        folderName = timeOfDay[index];
+      }
   };
-  body.style.backgroundImage = `url(./assets/images/${timeOfDay}/${photoNumber}.jpg)`;
+
+  body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
 })
 //-------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
 
+
+
+//Ввод имени и цели--------------------------------------------------------------
+//-------------------------------------------------------------------------------
+getName = () => {
+  localStorage.getItem('name') === null ? name.textContent = 'Укажите ваше имя' : 
+                                          name.textContent = localStorage.getItem('name')
+}
+
+getFocus = () => {
+  localStorage.getItem('focus') === null ? focus.textContent = 'Задайте цель' : 
+                                           focus.textContent = localStorage.getItem('focus')
+}
+
+setName = (event) => {
+ if (event.keyCode === 13) {
+    if (name.innerText !== '') {
+      localStorage.setItem('name', name.innerText);
+    }
+    name.blur();
+ }
+}
+
+setFocus = (event) => {
+  if (event.keyCode === 13) {
+    if (focus.innerText !== '') {
+      localStorage.setItem('focus', focus.innerText);
+    }
+    focus.blur();
+ }
+}
+
+name.addEventListener('keypress', setName);
+focus.addEventListener('keypress', setFocus);
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+
+
+
+
 //вызываем функции времени
+getName();
+getFocus();
 show_greting();
 setDay();
 setTime();
