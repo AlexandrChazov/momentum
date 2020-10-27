@@ -198,31 +198,75 @@ const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
 const city = document.querySelector('.city');
+const humidity = document.querySelector('.humidity');
+const wind = document.querySelector('.wind');
 
 async function getWeather() {  
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=ru&appid=08f2a575dda978b9c539199e54df03b0&units=metric`;
   const res = await fetch(url);
-  const data = await res.json(); 
+  const data = await res.json();
 
+  if (data.cod === '404') {
+      alert('Название города указано не верно')
+      city.textContent = 'Введите название вашего города';
+      localStorage.setItem('city', 'Ваш город');
+      weatherDescription.textContent = '';
+      wind.textContent = '';
+      temperature.textContent = '';
+      humidity.textContent = '';
+      wind.textContent = '';
+      weatherIcon.classList.add('hide');
+
+      exit();
+    }
+  
+  
+  weatherIcon.classList.remove('hide');
   weatherIcon.className = 'weather-icon owf';
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
   weatherIcon.classList.add(`owf-5x`); //большие иконки
-  temperature.textContent = `${data.main.temp}°C`;
+  temperature.textContent = `Температура воздуха ${data.main.temp} °C`;
   weatherDescription.textContent = data.weather[0].description;
-
+  humidity.textContent = `Относительная влажность ${data.main.humidity} %`;
+  wind.textContent = `Скорость ветра ${data.wind.speed} м/с`;
 }
+  
 
 function setCity(event) {
-  if (event.code === 'Enter') {
-    getWeather();
-    city.blur();
+  if (event.keyCode === 13) {
+    
+    if (city.innerText !== '') {                         // запоминаем город
+      localStorage.setItem('city', city.innerText);
+      
+    }
+      city.textContent = localStorage.getItem('city');
+      getWeather();
+      city.blur();
   }
 }
+
+if (localStorage.getItem('city')) {
+    city.textContent = localStorage.getItem('city');   // если в памяти уже присутствует город, то 
+}                                                      // выводим название города на экран
+
 
 document.addEventListener('DOMContentLoaded', getWeather);
 city.addEventListener('keypress', setCity);
 
 getWeather()
+
+
+
+city.addEventListener('focus', function() {    //Очистка названия города
+  city.textContent = ''; 
+});
+
+city.addEventListener('blur', function() {
+  city.textContent = localStorage.getItem('city');  
+});
+
+
+
 //--------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------
 
