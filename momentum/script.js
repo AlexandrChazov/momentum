@@ -178,7 +178,6 @@ focus.addEventListener('keypress', setFocus);
 // скопируйте код себе и запустите со своего компьютера
 const blockquote = document.querySelector('blockquote');
 const figcaption = document.querySelector('figcaption');
-const btn = document.querySelector('.btn');
 
 // если в ссылке заменить lang=en на lang=ru, цитаты будут на русском языке
 // префикс https://cors-anywhere.herokuapp.com используем для доступа к данным с других сайтов если браузер возвращает ошибку Cross-Origin Request Blocked 
@@ -190,7 +189,7 @@ async function getQuote() {
   figcaption.textContent = data.quoteAuthor;
 }
 document.addEventListener('DOMContentLoaded', getQuote);
-btn.addEventListener('click', getQuote);
+quote_button.addEventListener('click', getQuote);
 
 //Погода--------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------
@@ -226,7 +225,7 @@ async function getWeather() {
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
   weatherIcon.classList.add(`owf-5x`); //большие иконки
   temperature.textContent = `Температура воздуха ${data.main.temp} °C`;
-  weatherDescription.textContent = data.weather[0].description;
+  weatherDescription.textContent = `В вашем городе ${data.weather[0].description}`;
   humidity.textContent = `Относительная влажность ${data.main.humidity} %`;
   wind.textContent = `Скорость ветра ${data.wind.speed} м/с`;
 }

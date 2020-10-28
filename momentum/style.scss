@@ -1,0 +1,220 @@
+:root {
+    font-size: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+@mixin button {
+    display: inline-block;
+    color: rgb(205,216,228);
+    text-decoration: none;
+    padding: .2em .8em;
+    outline: none;
+    border-right: 0.1rem solid rgba(13,20,27,.5);
+    border-top: 0.1rem solid rgba(270,278,287,.01);
+    background-color: rgb(64,73,82);
+    background-image:
+    radial-gradient(0.1rem 60% at 0% 50%, rgba(255,255,255,.3), transparent),
+    radial-gradient(0.1rem 60% at 100% 50%, rgba(255,255,255,.3), transparent),
+    linear-gradient(rgb(64,73,82), rgb(72,81,90));
+
+        &:hover {
+            background-image:
+            radial-gradient(0.1rem 60% at 0% 50%, rgba(255,255,255,.3), transparent),
+            radial-gradient(0.1rem 60% at 100% 50%, rgba(255,255,255,.3), transparent),
+            linear-gradient(rgb(51,60,67), rgb(58,65,72));
+        }
+}
+  
+.hide {
+    display: none;
+} 
+  
+  body {
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    background-size: cover;
+    color: #ffffff;
+    background: url(./assets/images/day/1.jpg) center no-repeat;
+    background-size: cover;
+    transition: background-image 2s ease-in-out;
+
+    .wrapper {
+        display: grid;
+        align-items: center;
+        margin: 0 auto;
+        grid-template-columns: auto;
+        column-width: 50%;
+    }
+      
+        .weather_wrapper {
+            text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+            font-size: 4.5rem;
+        
+                .city {
+                    max-width: 40rem;
+                    cursor: pointer;
+                    margin: 0 auto;
+                }
+        }
+      
+      
+    .time_wrapper {
+        margin: 9rem auto;
+
+        .time {
+            
+            font-size: 45rem;
+            text-shadow: #000000 0.4rem 0.4rem 0.1rem
+        }
+
+        .week {
+            font-size: 15rem;
+        }
+    }
+       
+    .greeting_wrapper {
+        font-size: 4.5rem;
+    }    
+
+    .focus_wrapper {
+        margin: 5rem auto;
+        font-size: 4.5rem;
+    }
+
+    .scroll_wrapper {
+        width: 100vh;
+        margin: 0 auto;
+
+        .scroll_content {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            @include button;
+            cursor: pointer;
+            font-size: 4.5rem;
+        }
+    }
+
+    .quote_wrapper {
+        width: 70%;
+        margin: 6rem auto;
+        font-size: 6rem;
+
+        .btn {
+            font-size: 4.5rem;
+            @include button;
+            cursor: pointer;
+        }
+    }
+  }
+
+    
+  
+  
+  @media screen and (max-width: 1279px) {
+    body {
+              
+        .weather_wrapper {
+            font-size: 1.5rem;
+        }
+      
+      
+    .time_wrapper {
+        margin: 1rem auto;
+
+        .time {
+            font-size: 14rem;
+        }
+
+        .week {
+            font-size: 4rem;
+        }
+    }
+       
+    .greeting_wrapper {
+        font-size: 1.5rem;
+    }    
+
+    .focus_wrapper {
+        margin: 2rem auto;
+        font-size: 1.5rem;
+    }
+
+    .scroll_wrapper {
+
+        .btn {
+            font-size: 1.5rem;
+        }
+    }
+
+    .quote_wrapper {
+        margin: 2rem auto;
+        font-size: 1.5rem;
+
+        .btn {
+            font-size: 1.5rem;
+        }
+    }
+  
+}
+}
+
+@media screen and (max-width: 600px) {
+    body {
+      
+        .weather_wrapper {
+                    font-size: 1rem;
+                }
+            
+            
+            .time_wrapper {
+                margin: 1rem auto;
+        
+                .time {
+                    font-size: 10rem;
+                }
+        
+                .week {
+                    font-size: 3rem;
+                }
+            }
+            
+            .greeting_wrapper {
+                font-size: 1rem;
+            }    
+        
+            .focus_wrapper {
+                margin: 2rem auto;
+                font-size: 1rem;
+            }
+        
+            .scroll_wrapper {
+        
+                .btn {
+                    font-size: 1rem;
+                }
+            }
+        
+            .quote_wrapper {
+                margin: 1rem auto;
+                font-size: 1.5rem;
+        
+                .btn {
+                    font-size: 1rem;
+                }
+        }
+    }
+}
+  
