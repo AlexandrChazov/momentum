@@ -13,8 +13,15 @@
   display: none;
 }
 
-body {
+body .wrapper {
   font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  height: 100vh;
+  color: #ffffff;
+  background: url(./assets/images/day/1.jpg) center no-repeat;
+  background-size: cover;
+  -webkit-transition: background-image 2s ease-in-out;
+  transition: background-image 2s ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,38 +29,16 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-align: center;
-  height: 100vh;
-  background-size: cover;
-  color: #ffffff;
-  background: url(./assets/images/day/1.jpg) center no-repeat;
-  background-size: auto;
-  -webkit-transition: background-image 2s ease-in-out;
-  transition: background-image 2s ease-in-out;
-}
-
-body .wrapper {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: 0 auto;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
-  -webkit-column-width: 50%;
-          column-width: 50%;
+  overflow: hidden;
 }
 
 body .weather_wrapper {
   text-shadow: #000000 0.1rem 0.1rem 0.1rem;
-  font-size: 4.5rem;
+  font-size: 3.5rem;
 }
 
 body .weather_wrapper .city {
@@ -63,29 +48,36 @@ body .weather_wrapper .city {
 }
 
 body .time_wrapper {
-  margin: 9rem auto;
+  margin: 2rem auto;
 }
 
 body .time_wrapper .time {
-  font-size: 45rem;
+  font-size: 20rem;
   text-shadow: #000000 0.4rem 0.4rem 0.1rem;
 }
 
 body .time_wrapper .week {
-  font-size: 15rem;
+  font-size: 5rem;
+  text-shadow: #000000 0.2rem 0.2rem 0.1rem;
 }
 
 body .greeting_wrapper {
-  font-size: 4.5rem;
+  font-size: 3rem;
+  text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+}
+
+body .greeting_wrapper .name {
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
 body .focus_wrapper {
-  margin: 5rem auto;
-  font-size: 4.5rem;
+  margin: 3rem auto;
+  font-size: 3rem;
+  text-shadow: #000000 0.1rem 0.1rem 0.1rem;
 }
 
 body .scroll_wrapper {
-  width: 100vh;
   margin: 0 auto;
 }
 
@@ -110,7 +102,7 @@ body .scroll_wrapper .btn {
   background-image: radial-gradient(0.1rem 60% at 0% 50%, rgba(255, 255, 255, 0.3), transparent), radial-gradient(0.1rem 60% at 100% 50%, rgba(255, 255, 255, 0.3), transparent), -webkit-gradient(linear, left top, left bottom, from(#404952), to(#48515a));
   background-image: radial-gradient(0.1rem 60% at 0% 50%, rgba(255, 255, 255, 0.3), transparent), radial-gradient(0.1rem 60% at 100% 50%, rgba(255, 255, 255, 0.3), transparent), linear-gradient(#404952, #48515a);
   cursor: pointer;
-  font-size: 4.5rem;
+  font-size: 3rem;
 }
 
 body .scroll_wrapper .btn:hover {
@@ -121,11 +113,16 @@ body .scroll_wrapper .btn:hover {
 body .quote_wrapper {
   width: 70%;
   margin: 6rem auto;
-  font-size: 6rem;
+  font-size: 3rem;
+  text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+}
+
+body .quote_wrapper .quote {
+  height: 7rem;
 }
 
 body .quote_wrapper .btn {
-  font-size: 4.5rem;
+  font-size: 3rem;
   display: inline-block;
   color: #cdd8e4;
   text-decoration: none;
@@ -152,23 +149,26 @@ body .quote_wrapper .btn:hover {
     margin: 1rem auto;
   }
   body .time_wrapper .time {
-    font-size: 14rem;
+    font-size: 9rem;
   }
   body .time_wrapper .week {
-    font-size: 4rem;
+    font-size: 2rem;
   }
   body .greeting_wrapper {
-    font-size: 1.5rem;
+    font-size: 1rem;
+  }
+  body .greeting_wrapper .name {
+    max-width: 25rem;
   }
   body .focus_wrapper {
-    margin: 2rem auto;
-    font-size: 1.5rem;
+    margin: 1rem auto;
+    font-size: 1rem;
   }
   body .scroll_wrapper .btn {
     font-size: 1.5rem;
   }
   body .quote_wrapper {
-    margin: 2rem auto;
+    margin: 1rem auto;
     font-size: 1.5rem;
   }
   body .quote_wrapper .btn {
@@ -184,13 +184,16 @@ body .quote_wrapper .btn:hover {
     margin: 1rem auto;
   }
   body .time_wrapper .time {
-    font-size: 10rem;
+    font-size: 6rem;
   }
   body .time_wrapper .week {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   body .greeting_wrapper {
     font-size: 1rem;
+  }
+  body .greeting_wrapper .name {
+    max-width: 20rem;
   }
   body .focus_wrapper {
     margin: 2rem auto;

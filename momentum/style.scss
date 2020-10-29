@@ -35,30 +35,27 @@
 } 
   
   body {
-    font-family: 'Quicksand', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100vh;
-    background-size: cover;
-    color: #ffffff;
-    background: url(./assets/images/day/1.jpg) center no-repeat;
-    background-size: auto;
-    transition: background-image 2s ease-in-out;
+    
+    
 
     .wrapper {
-        display: grid;
-        align-items: center;
+        font-family: 'Quicksand', sans-serif;
+        text-align: center;
+        height: 100vh;
+        color: #ffffff;
+        background: url(./assets/images/day/1.jpg) center no-repeat;
+        background-size: cover;
+        transition: background-image 2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         margin: 0 auto;
-        grid-template-columns: auto;
-        column-width: 50%;
+        overflow: hidden;
     }
       
         .weather_wrapper {
             text-shadow: #000000 0.1rem 0.1rem 0.1rem;
-            font-size: 4.5rem;
+            font-size: 3.5rem;
         
                 .city {
                     max-width: 40rem;
@@ -69,30 +66,37 @@
       
       
     .time_wrapper {
-        margin: 9rem auto;
+        margin: 2rem auto;
 
         .time {
             
-            font-size: 45rem;
+            font-size: 20rem;
             text-shadow: #000000 0.4rem 0.4rem 0.1rem
         }
 
         .week {
-            font-size: 15rem;
+            font-size: 5rem;
+            text-shadow: #000000 0.2rem 0.2rem 0.1rem;
         }
     }
        
     .greeting_wrapper {
-        font-size: 4.5rem;
+        font-size: 3rem;
+        text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+
+        .name {
+            max-width: 40rem;
+            margin: 0 auto;
+        }
     }    
 
     .focus_wrapper {
-        margin: 5rem auto;
-        font-size: 4.5rem;
+        margin: 3rem auto;
+        font-size: 3rem;
+        text-shadow: #000000 0.1rem 0.1rem 0.1rem;
     }
 
     .scroll_wrapper {
-        width: 100vh;
         margin: 0 auto;
 
         .scroll_content {
@@ -103,17 +107,23 @@
         .btn {
             @include button;
             cursor: pointer;
-            font-size: 4.5rem;
+            font-size: 3rem;
         }
     }
 
     .quote_wrapper {
         width: 70%;
         margin: 6rem auto;
-        font-size: 6rem;
+        
+        font-size: 3rem;
+        text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+
+        .quote {
+            height: 7rem;
+        }
 
         .btn {
-            font-size: 4.5rem;
+            font-size: 3rem;
             @include button;
             cursor: pointer;
         }
@@ -135,21 +145,25 @@
         margin: 1rem auto;
 
         .time {
-            font-size: 14rem;
+            font-size: 9rem;
         }
 
         .week {
-            font-size: 4rem;
+            font-size: 2rem;
         }
     }
        
     .greeting_wrapper {
-        font-size: 1.5rem;
+        font-size: 1rem;
+
+        .name {
+            max-width: 25rem;
+        }
     }    
 
     .focus_wrapper {
-        margin: 2rem auto;
-        font-size: 1.5rem;
+        margin: 1rem auto;
+        font-size: 1rem;
     }
 
     .scroll_wrapper {
@@ -160,7 +174,7 @@
     }
 
     .quote_wrapper {
-        margin: 2rem auto;
+        margin: 1rem auto;
         font-size: 1.5rem;
 
         .btn {
@@ -183,16 +197,20 @@
                 margin: 1rem auto;
         
                 .time {
-                    font-size: 10rem;
+                    font-size: 6rem;
                 }
         
                 .week {
-                    font-size: 3rem;
+                    font-size: 2rem;
                 }
             }
             
             .greeting_wrapper {
                 font-size: 1rem;
+
+                .name {
+                    max-width: 20rem;
+                }
             }    
         
             .focus_wrapper {

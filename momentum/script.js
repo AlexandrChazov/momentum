@@ -5,7 +5,7 @@ let time = document.querySelector('.time'),
     week = document.querySelector('.week'),
     week_array = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'],
     month_array = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
-    body = document.querySelector("body"),
+    wrapper = document.querySelector(".wrapper"),
     photoNumber = Math.floor(1 + Math.random() * 20),
     timeOfDay = ['morning','day','evening','night'],
     folderName = "";
@@ -59,22 +59,22 @@ function show_greting() {
   if (hour<6) {
     greeting.innerHTML = 'Доброй ночи,';
     folderName = timeOfDay[3];
-    body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
+    wrapper.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
   } else 
   if (hour<12) {
     greeting.innerHTML = 'Доброе утро,';
     folderName = timeOfDay[0];
-    body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
+    wrapper.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
   } else
   if (hour<18) {
     greeting.innerHTML = 'Добрый день,';
     folderName = timeOfDay[1];
-    body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
+    wrapper.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
   } else
   if (hour<24) {
     greeting.innerHTML = 'Добрый вечер,';
     folderName = timeOfDay[2];
-    body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
+    wrapper.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
   }
 }
 //------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ back_button.addEventListener('click', function() {
        folderName = timeOfDay[index];
     }
   };
-  body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
+  wrapper.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
 })
 
 ahead_button.addEventListener('click', function() {
@@ -131,7 +131,7 @@ ahead_button.addEventListener('click', function() {
       }
   };
 
-  body.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
+  wrapper.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
 })
 //-------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
