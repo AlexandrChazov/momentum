@@ -36,52 +36,52 @@ body .wrapper {
   overflow: hidden;
 }
 
-body .weather_wrapper {
+body .wrapper .weather_wrapper {
   text-shadow: #000000 0.1rem 0.1rem 0.1rem;
-  font-size: 3.5rem;
+  font-size: 1.2rem;
 }
 
-body .weather_wrapper .city {
-  max-width: 40rem;
+body .wrapper .weather_wrapper .city {
+  max-width: 35rem;
   cursor: pointer;
   margin: 0 auto;
 }
 
-body .time_wrapper {
-  margin: 2rem auto;
+body .wrapper .time_wrapper {
+  margin: 1rem auto;
 }
 
-body .time_wrapper .time {
-  font-size: 20rem;
+body .wrapper .time_wrapper .time {
+  font-size: 10rem;
   text-shadow: #000000 0.4rem 0.4rem 0.1rem;
 }
 
-body .time_wrapper .week {
-  font-size: 5rem;
+body .wrapper .time_wrapper .week {
+  font-size: 1.5rem;
   text-shadow: #000000 0.2rem 0.2rem 0.1rem;
 }
 
-body .greeting_wrapper {
-  font-size: 3rem;
+body .wrapper .greeting_wrapper {
+  font-size: 1.2rem;
   text-shadow: #000000 0.1rem 0.1rem 0.1rem;
 }
 
-body .greeting_wrapper .name {
+body .wrapper .greeting_wrapper .name {
   max-width: 40rem;
   margin: 0 auto;
 }
 
-body .focus_wrapper {
-  margin: 3rem auto;
-  font-size: 3rem;
+body .wrapper .focus_wrapper {
+  margin: 1rem auto;
+  font-size: 1.2rem;
   text-shadow: #000000 0.1rem 0.1rem 0.1rem;
 }
 
-body .scroll_wrapper {
+body .wrapper .scroll_wrapper {
   margin: 0 auto;
 }
 
-body .scroll_wrapper .scroll_content {
+body .wrapper .scroll_wrapper .scroll_content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,7 +90,7 @@ body .scroll_wrapper .scroll_content {
           justify-content: center;
 }
 
-body .scroll_wrapper .btn {
+body .wrapper .scroll_wrapper .btn {
   display: inline-block;
   color: #cdd8e4;
   text-decoration: none;
@@ -102,27 +102,27 @@ body .scroll_wrapper .btn {
   background-image: radial-gradient(0.1rem 60% at 0% 50%, rgba(255, 255, 255, 0.3), transparent), radial-gradient(0.1rem 60% at 100% 50%, rgba(255, 255, 255, 0.3), transparent), -webkit-gradient(linear, left top, left bottom, from(#404952), to(#48515a));
   background-image: radial-gradient(0.1rem 60% at 0% 50%, rgba(255, 255, 255, 0.3), transparent), radial-gradient(0.1rem 60% at 100% 50%, rgba(255, 255, 255, 0.3), transparent), linear-gradient(#404952, #48515a);
   cursor: pointer;
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
-body .scroll_wrapper .btn:hover {
+body .wrapper .scroll_wrapper .btn:hover {
   background-image: radial-gradient(0.1rem 60% at 0% 50%, rgba(255, 255, 255, 0.3), transparent), radial-gradient(0.1rem 60% at 100% 50%, rgba(255, 255, 255, 0.3), transparent), -webkit-gradient(linear, left top, left bottom, from(#333c43), to(#3a4148));
   background-image: radial-gradient(0.1rem 60% at 0% 50%, rgba(255, 255, 255, 0.3), transparent), radial-gradient(0.1rem 60% at 100% 50%, rgba(255, 255, 255, 0.3), transparent), linear-gradient(#333c43, #3a4148);
 }
 
-body .quote_wrapper {
+body .wrapper .quote_wrapper {
   width: 70%;
-  margin: 6rem auto;
-  font-size: 3rem;
+  margin: 1rem auto;
+  font-size: 1.5rem;
   text-shadow: #000000 0.1rem 0.1rem 0.1rem;
 }
 
-body .quote_wrapper .quote {
+body .wrapper .quote_wrapper .quote {
   height: 7rem;
 }
 
-body .quote_wrapper .btn {
-  font-size: 3rem;
+body .wrapper .quote_wrapper .btn {
+  font-size: 1.5rem;
   display: inline-block;
   color: #cdd8e4;
   text-decoration: none;
@@ -136,7 +136,7 @@ body .quote_wrapper .btn {
   cursor: pointer;
 }
 
-body .quote_wrapper .btn:hover {
+body .wrapper .quote_wrapper .btn:hover {
   background-image: radial-gradient(0.1rem 60% at 0% 50%, rgba(255, 255, 255, 0.3), transparent), radial-gradient(0.1rem 60% at 100% 50%, rgba(255, 255, 255, 0.3), transparent), -webkit-gradient(linear, left top, left bottom, from(#333c43), to(#3a4148));
   background-image: radial-gradient(0.1rem 60% at 0% 50%, rgba(255, 255, 255, 0.3), transparent), radial-gradient(0.1rem 60% at 100% 50%, rgba(255, 255, 255, 0.3), transparent), linear-gradient(#333c43, #3a4148);
 }

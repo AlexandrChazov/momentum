@@ -34,9 +34,7 @@
     display: none;
 } 
   
-  body {
-    
-    
+body {
 
     .wrapper {
         font-family: 'Quicksand', sans-serif;
@@ -51,84 +49,86 @@
         justify-content: center;
         margin: 0 auto;
         overflow: hidden;
-    }
+    
       
         .weather_wrapper {
             text-shadow: #000000 0.1rem 0.1rem 0.1rem;
-            font-size: 3.5rem;
-        
+            font-size: 1.2rem;
+
                 .city {
-                    max-width: 40rem;
+                    max-width: 35rem;
                     cursor: pointer;
                     margin: 0 auto;
                 }
-        }
-      
-      
-    .time_wrapper {
-        margin: 2rem auto;
-
-        .time {
             
-            font-size: 20rem;
-            text-shadow: #000000 0.4rem 0.4rem 0.1rem
         }
+      
+      
+        .time_wrapper {
+            margin: 1rem auto;
 
-        .week {
-            font-size: 5rem;
-            text-shadow: #000000 0.2rem 0.2rem 0.1rem;
+            .time {
+                
+                font-size: 10rem;
+                text-shadow: #000000 0.4rem 0.4rem 0.1rem
+            }
+
+            .week {
+                font-size: 1.5rem;
+                text-shadow: #000000 0.2rem 0.2rem 0.1rem;
+            }
         }
-    }
        
-    .greeting_wrapper {
-        font-size: 3rem;
-        text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+        .greeting_wrapper {
+            font-size: 1.2rem;
+            text-shadow: #000000 0.1rem 0.1rem 0.1rem;
 
-        .name {
-            max-width: 40rem;
+            .name {
+                max-width: 40rem;
+                margin: 0 auto;
+            }
+        }    
+
+        .focus_wrapper {
+            margin: 1rem auto;
+            font-size: 1.2rem;
+            text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+        }
+
+        .scroll_wrapper {
             margin: 0 auto;
-        }
-    }    
 
-    .focus_wrapper {
-        margin: 3rem auto;
-        font-size: 3rem;
-        text-shadow: #000000 0.1rem 0.1rem 0.1rem;
-    }
+            .scroll_content {
+                display: flex;
+                justify-content: center;
+            }
 
-    .scroll_wrapper {
-        margin: 0 auto;
-
-        .scroll_content {
-            display: flex;
-            justify-content: center;
+            .btn {
+                @include button;
+                cursor: pointer;
+                font-size: 1.5rem;
+            }
         }
 
-        .btn {
-            @include button;
-            cursor: pointer;
-            font-size: 3rem;
-        }
-    }
+        .quote_wrapper {
+            width: 70%;
+            margin: 1rem auto;
+            
+            font-size: 1.5rem;
+            text-shadow: #000000 0.1rem 0.1rem 0.1rem;
 
-    .quote_wrapper {
-        width: 70%;
-        margin: 6rem auto;
-        
-        font-size: 3rem;
-        text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+            .quote {
+                height: 7rem;
+            }
 
-        .quote {
-            height: 7rem;
-        }
-
-        .btn {
-            font-size: 3rem;
-            @include button;
-            cursor: pointer;
+            .btn {
+                font-size: 1.5rem;
+                @include button;
+                cursor: pointer;
+            }
         }
     }
-  }
+}
 
     
   
