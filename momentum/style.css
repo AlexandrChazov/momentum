@@ -142,72 +142,72 @@ body .wrapper .quote_wrapper .btn:hover {
 }
 
 @media screen and (max-width: 1279px) {
-  body .weather_wrapper {
+  body .wrapper .weather_wrapper {
     font-size: 1.5rem;
   }
-  body .time_wrapper {
+  body .wrapper .time_wrapper {
     margin: 1rem auto;
   }
-  body .time_wrapper .time {
+  body .wrapper .time_wrapper .time {
     font-size: 9rem;
   }
-  body .time_wrapper .week {
+  body .wrapper .time_wrapper .week {
     font-size: 2rem;
   }
-  body .greeting_wrapper {
+  body .wrapper .greeting_wrapper {
     font-size: 1rem;
   }
-  body .greeting_wrapper .name {
+  body .wrapper .greeting_wrapper .name {
     max-width: 25rem;
   }
-  body .focus_wrapper {
+  body .wrapper .focus_wrapper {
     margin: 1rem auto;
     font-size: 1rem;
   }
-  body .scroll_wrapper .btn {
+  body .wrapper .scroll_wrapper .btn {
     font-size: 1.5rem;
   }
-  body .quote_wrapper {
+  body .wrapper .quote_wrapper {
     margin: 1rem auto;
     font-size: 1.5rem;
   }
-  body .quote_wrapper .btn {
+  body .wrapper .quote_wrapper .btn {
     font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  body .weather_wrapper {
-    font-size: 1rem;
+  body .wrapper .weather_wrapper {
+    font-size: 1.3rem;
   }
-  body .time_wrapper {
+  body .wrapper .time_wrapper {
     margin: 1rem auto;
   }
-  body .time_wrapper .time {
-    font-size: 6rem;
+  body .wrapper .time_wrapper .time {
+    font-size: 7rem;
   }
-  body .time_wrapper .week {
+  body .wrapper .time_wrapper .week {
     font-size: 2rem;
   }
-  body .greeting_wrapper {
-    font-size: 1rem;
+  body .wrapper .greeting_wrapper {
+    font-size: 0.8rem;
   }
-  body .greeting_wrapper .name {
+  body .wrapper .greeting_wrapper .name {
     max-width: 20rem;
   }
-  body .focus_wrapper {
+  body .wrapper .focus_wrapper {
     margin: 2rem auto;
     font-size: 1rem;
   }
-  body .scroll_wrapper .btn {
-    font-size: 1.5rem;
+  body .wrapper .scroll_wrapper .btn {
+    font-size: 1.2rem;
   }
-  body .quote_wrapper {
+  body .wrapper .quote_wrapper {
     margin: 1rem auto;
     font-size: 1.5rem;
   }
-  body .quote_wrapper .btn {
-    font-size: 1.5rem;
+  body .wrapper .quote_wrapper .btn {
+    font-size: 1.2rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

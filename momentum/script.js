@@ -116,6 +116,7 @@ back_button.addEventListener('click', function() {
        folderName = timeOfDay[index];
     }
   };
+
   wrapper.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
 })
 

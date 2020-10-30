@@ -133,86 +133,90 @@ body {
     
   
   
-  @media screen and (max-width: 1279px) {
+@media screen and (max-width: 1279px) {
     body {
-              
-        .weather_wrapper {
-            font-size: 1.5rem;
-        }
-      
-      
-    .time_wrapper {
-        margin: 1rem auto;
 
-        .time {
-            font-size: 9rem;
-        }
+        .wrapper {
+                
+            .weather_wrapper {
+                font-size: 1.5rem;
+            }
+        
+        
+            .time_wrapper {
+                margin: 1rem auto;
 
-        .week {
-            font-size: 2rem;
+                .time {
+                    font-size: 9rem;
+                }
+
+                .week {
+                    font-size: 2rem;
+                }
+            }
+        
+            .greeting_wrapper {
+                font-size: 1rem;
+
+                .name {
+                    max-width: 25rem;
+                }
+            }    
+
+            .focus_wrapper {
+                margin: 1rem auto;
+                font-size: 1rem;
+            }
+
+            .scroll_wrapper {
+
+                .btn {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .quote_wrapper {
+                margin: 1rem auto;
+                font-size: 1.5rem;
+
+                .btn {
+                    font-size: 1.5rem;
+                }
+            }
         }
     }
-       
-    .greeting_wrapper {
-        font-size: 1rem;
-
-        .name {
-            max-width: 25rem;
-        }
-    }    
-
-    .focus_wrapper {
-        margin: 1rem auto;
-        font-size: 1rem;
-    }
-
-    .scroll_wrapper {
-
-        .btn {
-            font-size: 1.5rem;
-        }
-    }
-
-    .quote_wrapper {
-        margin: 1rem auto;
-        font-size: 1.5rem;
-
-        .btn {
-            font-size: 1.5rem;
-        }
-    }
-  
-}
 }
 
 @media screen and (max-width: 600px) {
     body {
+
+        .wrapper {
       
-        .weather_wrapper {
-                    font-size: 1rem;
-                }
-            
-            
+            .weather_wrapper {
+                    font-size: 1.3rem;
+            }
+                
+                
             .time_wrapper {
                 margin: 1rem auto;
         
                 .time {
-                    font-size: 6rem;
+                    font-size: 7rem;
                 }
         
                 .week {
                     font-size: 2rem;
                 }
             }
-            
+                
             .greeting_wrapper {
-                font-size: 1rem;
+                font-size: 0.8rem;
 
                 .name {
                     max-width: 20rem;
                 }
             }    
-        
+            
             .focus_wrapper {
                 margin: 2rem auto;
                 font-size: 1rem;
@@ -221,17 +225,18 @@ body {
             .scroll_wrapper {
         
                 .btn {
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 }
             }
-        
+            
             .quote_wrapper {
                 margin: 1rem auto;
                 font-size: 1.5rem;
         
                 .btn {
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 }
+            }
         }
     }
 }
