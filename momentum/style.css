@@ -110,6 +110,11 @@ body .wrapper .scroll_wrapper .btn:hover {
   background-image: radial-gradient(0.1rem 60% at 0% 50%, rgba(255, 255, 255, 0.3), transparent), radial-gradient(0.1rem 60% at 100% 50%, rgba(255, 255, 255, 0.3), transparent), linear-gradient(#333c43, #3a4148);
 }
 
+body .wrapper .scroll_wrapper .btn:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 body .wrapper .quote_wrapper {
   width: 70%;
   margin: 1rem auto;
@@ -119,6 +124,9 @@ body .wrapper .quote_wrapper {
 
 body .wrapper .quote_wrapper .quote {
   height: 7rem;
+  opacity: 1;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 body .wrapper .quote_wrapper .btn {
@@ -139,6 +147,11 @@ body .wrapper .quote_wrapper .btn {
 body .wrapper .quote_wrapper .btn:hover {
   background-image: radial-gradient(0.1rem 60% at 0% 50%, rgba(255, 255, 255, 0.3), transparent), radial-gradient(0.1rem 60% at 100% 50%, rgba(255, 255, 255, 0.3), transparent), -webkit-gradient(linear, left top, left bottom, from(#333c43), to(#3a4148));
   background-image: radial-gradient(0.1rem 60% at 0% 50%, rgba(255, 255, 255, 0.3), transparent), radial-gradient(0.1rem 60% at 100% 50%, rgba(255, 255, 255, 0.3), transparent), linear-gradient(#333c43, #3a4148);
+}
+
+body .wrapper .quote_wrapper .btn:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 @media screen and (max-width: 1279px) {

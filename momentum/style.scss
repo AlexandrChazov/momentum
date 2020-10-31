@@ -108,6 +108,10 @@ body {
                 cursor: pointer;
                 font-size: 1.2rem;
             }
+
+            .btn:active{
+                transform: scale(1.2);
+              }
         }
 
         .quote_wrapper {
@@ -119,6 +123,8 @@ body {
 
             .quote {
                 height: 7rem;
+                opacity: 1;
+                transition: 1s ease-in-out;
             }
 
             .btn {
@@ -126,6 +132,10 @@ body {
                 @include button;
                 cursor: pointer;
             }
+
+            .btn:active{
+                transform: scale(1.2)
+              }
         }
     }
 }

@@ -117,7 +117,17 @@ back_button.addEventListener('click', function() {
     }
   };
 
-  wrapper.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
+  back_button.disabled = true;
+  setTimeout(function() {                       //кнопка не активна 2 секунды после нажатия
+                back_button.disabled = false
+            }, 2000);
+
+let img = document.createElement('img');        // фоновое изображение не меняется пока не прогрузится картинка
+img.src = `./assets/images/${folderName}/${photoNumber}.jpg`;
+img.onload = () => {
+    wrapper.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
+}
+  
 })
 
 ahead_button.addEventListener('click', function() {
@@ -132,7 +142,16 @@ ahead_button.addEventListener('click', function() {
       }
   };
 
-  wrapper.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
+  ahead_button.disabled = true;
+  setTimeout(function() {                       //кнопка не активна 2 секунды после нажатия
+                  ahead_button.disabled = false
+            }, 2000);
+
+  let img = document.createElement('img');        // фоновое изображение не меняется пока не прогрузится картинка
+  img.src = `./assets/images/${folderName}/${photoNumber}.jpg`;
+  img.onload = () => {
+      wrapper.style.backgroundImage = `url(./assets/images/${folderName}/${photoNumber}.jpg)`;
+  }
 })
 //-------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
@@ -179,16 +198,29 @@ focus.addEventListener('keypress', setFocus);
 // скопируйте код себе и запустите со своего компьютера
 const blockquote = document.querySelector('blockquote');
 const figcaption = document.querySelector('figcaption');
+const quote = document.querySelector('.quote');
 
 // если в ссылке заменить lang=en на lang=ru, цитаты будут на русском языке
 // префикс https://cors-anywhere.herokuapp.com используем для доступа к данным с других сайтов если браузер возвращает ошибку Cross-Origin Request Blocked 
 async function getQuote() {  
   const url = `https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=ru`;
   const res = await fetch(url);
-  const data = await res.json(); 
-  blockquote.textContent = data.quoteText;
-  figcaption.textContent = data.quoteAuthor;
+  const data = await res.json();
+
+  quote_button.disabled = true;
+      setTimeout(function() {                       //кнопка не активна 2 секунды после нажатия
+                      quote_button.disabled = false
+                }, 2000);
+  
+  quote.style.opacity = "0";
+  
+  setTimeout(function() {
+    blockquote.textContent = data.quoteText;
+    figcaption.textContent = data.quoteAuthor;
+    quote.style.opacity = "1";
+  }, 1000);
 }
+
 document.addEventListener('DOMContentLoaded', getQuote);
 quote_button.addEventListener('click', getQuote);
 
