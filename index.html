@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/owfont-regular.css">
+  <link rel="stylesheet" href="style.css" />
+  <title>Momentum</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="weather_wrapper">
+        
+        <div class="city" contenteditable="true">Минск</div>
+        <i class="weather-icon owf"></i>
+        
+            
+        <div class="weather-description"></div>
+        <div class="temperature"></div>
+        <div class="humidity"></div>
+        <div class="wind"></div>
+    </div>
+    
+    <div class="time_wrapper">
+        <time class="time"></time>
+        <div class="week"></div>
+    </div>
+    
+    <div class="greeting_wrapper">
+        <h1>
+          <div class="greeting"></div>
+          <div class="name" contenteditable="true">Укажите Ваше имя</div>
+        </h1>
+    </div>
+    
+    <div class="focus_wrapper">
+        <h2 class="text_style">Какова Ваша цель на сегодня?
+        <div class="focus text_style" contenteditable="true"></div>
+        </h2>
+    </div>
+    
+    <div class="scroll_wrapper">
+      <div class="scroll_content">
+        <button class="btn" id="back_button">Назад</button>
+        <button class="btn" id="ahead_button">Вперёд</button>
+      </div>
+    </div>
+
+    <div class="quote_wrapper">
+        <button class="btn" id="quote_button">Следущая цитата</button>
+
+        <figure class="quote">
+          <blockquote>
+            <!-- You were not born a winner, and you were not born a loser. You are what you make yourself be. -->
+          </blockquote>
+          <figcaption> 
+            <!-- Lou Holtz -->
+          </figcaption>
+        </figure>
+    </div>
+    
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
