@@ -1,1 +1,1 @@
-fireyourguns-JS2020Q3
+This project is published at https://fireyourguns.github.io/momentum/
