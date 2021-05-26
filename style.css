@@ -123,6 +123,7 @@ body .wrapper .quote_wrapper {
 }
 
 body .wrapper .quote_wrapper .quote {
+  margin-top: 2rem;
   height: 10rem;
   opacity: 1;
   -webkit-transition: 1s ease-in-out;

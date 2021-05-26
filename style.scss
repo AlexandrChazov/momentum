@@ -1,253 +1,250 @@
 :root {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 @mixin button {
-    display: inline-block;
-    color: rgb(205,216,228);
-    text-decoration: none;
-    padding: .2em .8em;
-    outline: none;
-    border-right: 0.1rem solid rgba(13,20,27,.5);
-    border-top: 0.1rem solid rgba(270,278,287,.01);
-    background-color: rgb(64,73,82);
+  display: inline-block;
+  color: rgb(205,216,228);
+  text-decoration: none;
+  padding: .2em .8em;
+  outline: none;
+  border-right: 0.1rem solid rgba(13,20,27,.5);
+  border-top: 0.1rem solid rgba(270,278,287,.01);
+  background-color: rgb(64,73,82);
+  background-image:
+  radial-gradient(0.1rem 60% at 0% 50%, rgba(255,255,255,.3), transparent),
+  radial-gradient(0.1rem 60% at 100% 50%, rgba(255,255,255,.3), transparent),
+  linear-gradient(rgb(64,73,82), rgb(72,81,90));
+
+  &:hover {
     background-image:
     radial-gradient(0.1rem 60% at 0% 50%, rgba(255,255,255,.3), transparent),
     radial-gradient(0.1rem 60% at 100% 50%, rgba(255,255,255,.3), transparent),
-    linear-gradient(rgb(64,73,82), rgb(72,81,90));
-
-        &:hover {
-            background-image:
-            radial-gradient(0.1rem 60% at 0% 50%, rgba(255,255,255,.3), transparent),
-            radial-gradient(0.1rem 60% at 100% 50%, rgba(255,255,255,.3), transparent),
-            linear-gradient(rgb(51,60,67), rgb(58,65,72));
-        }
+    linear-gradient(rgb(51,60,67), rgb(58,65,72));
+  }
 }
-  
+
 .hide {
-    display: none;
-} 
-  
+  display: none;
+}
+
 body {
 
-    .wrapper {
-        font-family: 'Quicksand', sans-serif;
-        text-align: center;
-        height: 100vh;
-        color: #ffffff;
-        background: url(./assets/images/day/1.jpg) center no-repeat;
-        background-size: cover;
-        transition: background-image 2s ease-in-out;
+  .wrapper {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    height: 100vh;
+    color: #ffffff;
+    background: url(./assets/images/day/1.jpg) center no-repeat;
+    background-size: cover;
+    transition: background-image 2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: hidden;
+
+
+    .weather_wrapper {
+      text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+      font-size: 1.7rem;
+
+        .city {
+          max-width: 35rem;
+          cursor: pointer;
+          margin: 0 auto;
+        }
+
+    }
+
+
+    .time_wrapper {
+      margin: 1rem auto;
+
+      .time {
+
+        font-size: 15rem;
+        text-shadow: #000000 0.4rem 0.4rem 0.1rem
+      }
+
+      .week {
+        font-size: 3rem;
+        text-shadow: #000000 0.2rem 0.2rem 0.1rem;
+      }
+    }
+
+    .greeting_wrapper {
+      font-size: 1.2rem;
+      text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+
+      .name {
+          max-width: 40rem;
+          margin: 0 auto;
+      }
+    }
+
+    .focus_wrapper {
+      margin: 1rem auto;
+      font-size: 1.2rem;
+      text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+    }
+
+    .scroll_wrapper {
+      margin: 0 auto;
+
+      .scroll_content {
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        margin: 0 auto;
-        overflow: hidden;
-    
-      
-        .weather_wrapper {
-            text-shadow: #000000 0.1rem 0.1rem 0.1rem;
-            font-size: 1.7rem;
+      }
 
-                .city {
-                    max-width: 35rem;
-                    cursor: pointer;
-                    margin: 0 auto;
-                }
-            
-        }
-      
-      
-        .time_wrapper {
-            margin: 1rem auto;
+      .btn {
+        @include button;
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
 
-            .time {
-                
-                font-size: 15rem;
-                text-shadow: #000000 0.4rem 0.4rem 0.1rem
-            }
-
-            .week {
-                font-size: 3rem;
-                text-shadow: #000000 0.2rem 0.2rem 0.1rem;
-            }
-        }
-       
-        .greeting_wrapper {
-            font-size: 1.2rem;
-            text-shadow: #000000 0.1rem 0.1rem 0.1rem;
-
-            .name {
-                max-width: 40rem;
-                margin: 0 auto;
-            }
-        }    
-
-        .focus_wrapper {
-            margin: 1rem auto;
-            font-size: 1.2rem;
-            text-shadow: #000000 0.1rem 0.1rem 0.1rem;
-        }
-
-        .scroll_wrapper {
-            margin: 0 auto;
-
-            .scroll_content {
-                display: flex;
-                justify-content: center;
-            }
-
-            .btn {
-                @include button;
-                cursor: pointer;
-                font-size: 1.2rem;
-            }
-
-            .btn:active{
-                transform: scale(1.2);
-              }
-        }
-
-        .quote_wrapper {
-            width: 70%;
-            margin: 1rem auto;
-            
-            font-size: 2rem;
-            text-shadow: #000000 0.1rem 0.1rem 0.1rem;
-
-            .quote {
-                height: 10rem;
-                opacity: 1;
-                transition: 1s ease-in-out;
-            }
-
-            .btn {
-                font-size: 1.2rem;
-                @include button;
-                cursor: pointer;
-            }
-
-            .btn:active{
-                transform: scale(1.2)
-              }
+      .btn:active{
+          transform: scale(1.2);
         }
     }
+
+    .quote_wrapper {
+      width: 70%;
+      margin: 1rem auto;
+
+      font-size: 2rem;
+      text-shadow: #000000 0.1rem 0.1rem 0.1rem;
+
+      .quote {
+        margin-top: 2rem;
+        height: 10rem;
+        opacity: 1;
+        transition: 1s ease-in-out;
+      }
+
+      .btn {
+        font-size: 1.2rem;
+        @include button;
+        cursor: pointer;
+      }
+
+      .btn:active{
+          transform: scale(1.2)
+        }
+    }
+  }
 }
 
-    
-  
-  
+
+
+
 @media screen and (max-width: 1279px) {
-    body {
+  body {
 
-        .wrapper {
-                
-            .weather_wrapper {
-                font-size: 1.5rem;
-            }
-        
-        
-            .time_wrapper {
-                margin: 1rem auto;
+    .wrapper {
 
-                .time {
-                    font-size: 9rem;
-                }
+      .weather_wrapper {
+        font-size: 1.5rem;
+      }
 
-                .week {
-                    font-size: 2rem;
-                }
-            }
-        
-            .greeting_wrapper {
-                font-size: 1rem;
 
-                .name {
-                    max-width: 25rem;
-                }
-            }    
+      .time_wrapper {
+        margin: 1rem auto;
 
-            .focus_wrapper {
-                margin: 1rem auto;
-                font-size: 1rem;
-            }
-
-            .scroll_wrapper {
-
-                .btn {
-                    font-size: 1.5rem;
-                }
-            }
-
-            .quote_wrapper {
-                margin: 1rem auto;
-                font-size: 1.5rem;
-
-                .btn {
-                    font-size: 1.5rem;
-                }
-            }
+        .time {
+          font-size: 9rem;
         }
+
+        .week {
+          font-size: 2rem;
+        }
+      }
+
+      .greeting_wrapper {
+        font-size: 1rem;
+
+        .name {
+          max-width: 25rem;
+        }
+      }
+
+      .focus_wrapper {
+        margin: 1rem auto;
+        font-size: 1rem;
+      }
+
+      .scroll_wrapper {
+
+        .btn {
+          font-size: 1.5rem;
+        }
+      }
+
+      .quote_wrapper {
+        margin: 1rem auto;
+        font-size: 1.5rem;
+
+        .btn {
+          font-size: 1.5rem;
+        }
+      }
     }
+  }
 }
 
 @media screen and (max-width: 600px) {
-    body {
+  body {
+    .wrapper {
 
-        .wrapper {
-      
-            .weather_wrapper {
-                    font-size: 1.3rem;
-            }
-                
-                
-            .time_wrapper {
-                margin: 1rem auto;
-        
-                .time {
-                    font-size: 7rem;
-                }
-        
-                .week {
-                    font-size: 2rem;
-                }
-            }
-                
-            .greeting_wrapper {
-                font-size: 0.8rem;
+      .weather_wrapper {
+        font-size: 1.3rem;
+      }
 
-                .name {
-                    max-width: 20rem;
-                }
-            }    
-            
-            .focus_wrapper {
-                margin: 2rem auto;
-                font-size: 1rem;
-            }
-        
-            .scroll_wrapper {
-        
-                .btn {
-                    font-size: 1.2rem;
-                }
-            }
-            
-            .quote_wrapper {
-                margin: 1rem auto;
-                font-size: 1.5rem;
-        
-                .btn {
-                    font-size: 1.2rem;
-                }
-            }
+      .time_wrapper {
+        margin: 1rem auto;
+
+        .time {
+          font-size: 7rem;
         }
+
+        .week {
+          font-size: 2rem;
+        }
+      }
+
+      .greeting_wrapper {
+          font-size: 0.8rem;
+
+          .name {
+            max-width: 20rem;
+          }
+      }
+
+      .focus_wrapper {
+        margin: 2rem auto;
+        font-size: 1rem;
+      }
+
+      .scroll_wrapper {
+        .btn {
+          font-size: 1.2rem;
+        }
+      }
+
+      .quote_wrapper {
+        margin: 1rem auto;
+        font-size: 1.5rem;
+
+        .btn {
+            font-size: 1.2rem;
+        }
+      }
     }
+  }
 }
-  
