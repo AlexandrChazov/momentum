@@ -25,10 +25,6 @@ body .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -37,6 +33,8 @@ body .wrapper {
 }
 
 body .wrapper .weather_wrapper {
+  position: absolute;
+  top: 3%;
   text-shadow: #000000 0.1rem 0.1rem 0.1rem;
   font-size: 1.7rem;
 }
@@ -48,7 +46,8 @@ body .wrapper .weather_wrapper .city {
 }
 
 body .wrapper .time_wrapper {
-  margin: 1rem auto;
+  position: absolute;
+  top: 25%;
 }
 
 body .wrapper .time_wrapper .time {
@@ -62,6 +61,8 @@ body .wrapper .time_wrapper .week {
 }
 
 body .wrapper .greeting_wrapper {
+  position: absolute;
+  top: 50%;
   font-size: 1.2rem;
   text-shadow: #000000 0.1rem 0.1rem 0.1rem;
 }
@@ -72,13 +73,15 @@ body .wrapper .greeting_wrapper .name {
 }
 
 body .wrapper .focus_wrapper {
-  margin: 1rem auto;
+  position: absolute;
+  top: 55%;
   font-size: 1.2rem;
   text-shadow: #000000 0.1rem 0.1rem 0.1rem;
 }
 
 body .wrapper .scroll_wrapper {
-  margin: 0 auto;
+  position: absolute;
+  top: 70%;
 }
 
 body .wrapper .scroll_wrapper .scroll_content {
@@ -116,21 +119,21 @@ body .wrapper .scroll_wrapper .btn:active {
 }
 
 body .wrapper .quote_wrapper {
-  width: 70%;
-  margin: 1rem auto;
+  width: 95%;
+  position: absolute;
+  top: 75%;
   font-size: 2rem;
   text-shadow: #000000 0.1rem 0.1rem 0.1rem;
 }
 
 body .wrapper .quote_wrapper .quote {
-  margin-top: 2rem;
-  height: 10rem;
   opacity: 1;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
 }
 
 body .wrapper .quote_wrapper .btn {
+  margin-bottom: 2rem;
   font-size: 1.2rem;
   display: inline-block;
   color: #cdd8e4;
@@ -218,7 +221,7 @@ body .wrapper .quote_wrapper .btn:active {
   }
   body .wrapper .quote_wrapper {
     margin: 1rem auto;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   body .wrapper .quote_wrapper .btn {
     font-size: 1.2rem;
